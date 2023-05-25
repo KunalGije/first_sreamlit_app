@@ -61,12 +61,10 @@ if streamlit.button('Get Fruit Load List'):
     my_data_rows = get_fruit_load_list()
     streamlit.dataframe(my_data_rows)
 
-add_my_fruit = streamlit.text_input('What fruit would you like to add?')
-#my_cur.execute("insert into fruit_load_list (fruit_name) VALUES (%s) ", (add_my_fruit))
-#streamlit.write('Thanks for adding ', add_my_fruit)
+    add_my_fruit = streamlit.text_input('What fruit would you like to add?')
 
-if add_my_fruit.strip() != '':
-    my_cur.execute("INSERT INTO fruit_load_list (fruit_name) VALUES (%s)", (add_my_fruit,))
-    my_cnx.commit()
-    #st.write('Thanks for adding', add_my_fruit)
-    streamlit.success('Thanks for adding ' + add_my_fruit)
+    if add_my_fruit.strip() != '':
+        my_cur.execute("INSERT INTO fruit_load_list (fruit_name) VALUES (%s)", (add_my_fruit,))
+        my_cnx.commit()
+        #st.write('Thanks for adding', add_my_fruit)
+        streamlit.success('Thanks for adding ' + add_my_fruit)
