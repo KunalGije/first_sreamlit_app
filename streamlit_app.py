@@ -51,4 +51,4 @@ if add_my_fruit:
     my_cur.execute("INSERT INTO fruit_load_list (fruit_name) VALUES (%s)", (add_my_fruit,))
     my_cnx.commit()
     #st.write('Thanks for adding', add_my_fruit)
-    st.success('Thanks for adding ' + add_my_fruit)
+    streamlit.success('Thanks for adding ' + add_my_fruit)
